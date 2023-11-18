@@ -1,0 +1,31 @@
+version: '3'
+services:
+  avatars.continuum-ai.de:
+    build: ./
+    container_name: avatars.continuum-ai.de
+    command: bun run dev --host
+    stop_signal: SIGTERM
+    entrypoint: ["/bin/bash", "./shutdown-handler.sh"]
+    links:
+      - database
+    environment:
+      PORT: 3000
+      DB_CONNECTION: "postgresql://main:ctACGEEnNe5NHL76qXKYiAwyBht4hRKz743EDFcpzDXXtLU4QBRPZAvVdhDQgrQf@localhost:5432/main"
+      NODE_ENV: "development"
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/avatars.continuum-ai.de
+      - ./persistent:/persistent
+    networks:
+      - postgres
+  database:
+    build: ./node_modules/@continuum-ai/database/
+    ports:
+      - "5436:5432"
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge

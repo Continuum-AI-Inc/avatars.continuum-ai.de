@@ -15,6 +15,7 @@
     "@astrojs/svelte": "^4.0.3",
     "@astrojs/tailwind": "^5.0.2",
     "@continuum-ai/avatars": "^1.0.1",
+    "@continuum-ai/database": "^0.0.2",
     "@prisma/client": "5.5.2",
     "animal-avatar-generator": "^1.2.0",
     "astro": "^3.5.3",
@@ -41,7 +42,7 @@
     "@types/uuid": "^9.0.7",
     "flowbite-svelte": "^0.44.19",
     "flowbite-svelte-blocks": "^0.5.1",
-    "prisma": "^5.5.2",
+    "prisma": "5.2.0",
     "svelte-radix": "^0.6.2"
   }
 }

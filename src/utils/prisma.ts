@@ -1,5 +1,3 @@
-import { PrismaClient } from '@prisma/client'
+import { createContext } from "@continuum-ai/database"
 
-export const prisma = new PrismaClient({
-	
-})
+export const { prisma } = await createContext({})
